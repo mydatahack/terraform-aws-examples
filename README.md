@@ -2,14 +2,28 @@
 
 Terraform Examples for AWS. 
 
+## Terraform Commands
 
+```bash
+# Initialise
+terraform init
+
+# Lint tf files
+terraform fmt
+
+# Create a plan with a tfvar file
+terraform plan -var-file="dev.tfvars"
+
+# Apply with a tfvar file
+terraform apply -var-file="dev.tfvars"
+```
 ## REFERENCES
 
 - Terraform use AWS SDK written in Go
 
 ### (1) State Management
 
-We can manage terraform state with different way (e.g. using S3 or DynamoDB).
+We can manage Terraform state with different way (e.g. using S3 or DynamoDB).
 
 Managing Terraform state with S3 bucket (https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa).
 
