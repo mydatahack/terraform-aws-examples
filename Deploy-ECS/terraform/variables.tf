@@ -1,8 +1,11 @@
 # AWS Configurations
 variable "region" { type = string }
-variable "tf_bucket_name" { type = string }
 variable "tag_name" { type = string }
-variable "environment" { type = string }
+variable "env" { type = string }
+
+# State Management Bucket
+variable "bucket" { type = string }
+variable "key" { type = string }
 
 # Service Config
 variable "service_name" { type = string }

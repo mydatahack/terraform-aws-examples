@@ -1,4 +1,7 @@
 region = "ap-southeast-2"
-tf_bucket_name = "tk-learning-tf-state"
 tag_name = "Learn TF"
-environment = "Dev"
+env = "dev"
+
+# State management bucket
+bucket = "tk-learning-tf-state"
+key = "terraform/state"
