@@ -28,6 +28,9 @@ One public subnet per zone (3 zones) and one private subnet per zone.
 ***AZ2***: 12.1.11.0/24
 ***AZ3***: 12.1.12.0/24
 
+### (4) Route Tables
+
+We create public and private Route tables and associate them to respective subnets. Public Rote table has Internet Gateway associated.
 
 ## REFERENCE
 
