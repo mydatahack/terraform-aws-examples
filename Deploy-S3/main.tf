@@ -2,6 +2,9 @@ terraform {
   required_providers {
     aws = "~> 3.0"
   }
+  backend "local" {
+    path = "./states/terraform.tfstate"
+  }
 }
 
 provider "aws" {
