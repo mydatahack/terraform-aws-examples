@@ -1,6 +1,6 @@
 # Create CodeStar Connection
 
-Creating CodeStar connection to Github, which will be used in CodePipeline.
+Creating CodeStar connections.
 
 **Note:**
 
