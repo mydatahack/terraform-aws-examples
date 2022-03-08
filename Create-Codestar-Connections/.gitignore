@@ -1,0 +1,3 @@
+# They get created when terraform init
+.terraform
+.terraform.lock.hcl
