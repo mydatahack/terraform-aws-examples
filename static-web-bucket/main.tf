@@ -1,10 +1,11 @@
 resource "aws_s3_bucket" "s3_bucket" {
+  count = var.create ? 1 : 0
   bucket = var.bucket_name
-
   tags = var.tags
 }
 
 resource "aws_s3_bucket_website_configuration" "s3_bucket" {
+  count = var.create ? 1 : 0
   bucket = aws_s3_bucket.s3_bucket.id
 
   index_document {
@@ -17,12 +18,13 @@ resource "aws_s3_bucket_website_configuration" "s3_bucket" {
 }
 
 resource "aws_s3_bucket_acl" "s3_bucket" {
+  count = var.create ? 1 : 0
   bucket = aws_s3_bucket.s3_bucket.id
-
   acl = "public-read"
 }
 
 resource "aws_s3_bucket_policy" "s3_bucket" {
+  count = var.create ? 1 : 0
   bucket = aws_s3_bucket.s3_bucket.id
 
   policy = jsonencode({

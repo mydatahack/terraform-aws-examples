@@ -1,14 +1,17 @@
 resource "aws_s3_bucket" "this" {
+  count = var.create ? 1 : 0
   bucket = var.bucket_name
   tags = var.tags
 }
 
 resource "aws_s3_bucket_acl" "s3_bucket_acl" {
+  count = var.create ? 1 : 0
   bucket = aws_s3_bucket.this.id
   acl    = "private"
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "s3_bucket_config" {
+  count = var.create ? 1 : 0
   bucket = aws_s3_bucket.this.id
 
   rule {
