@@ -1,0 +1,4 @@
+# They get created when terraform init
+# .terraform is too large for github. I think we can do init everytime we pull this into a new computer.
+.terraform
+.terraform.lock.hcl

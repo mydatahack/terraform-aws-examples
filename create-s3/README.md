@@ -4,22 +4,25 @@ This is for creating S3 bucket with Terraform.
 
 ## (1) Get Started
 
-```bash
-# Optional in case you need to use a particular profile for terraform commands
-export AWS_PROFILE=admin
+In fact, the entry file doesn't need to be named as `main.tf`. I think terraform automatically detect which file is the entry file.
 
-# Initialise Terraform
+To create, run this:
+
+```bash
+export AWS_PROFILE=<your profile name if not using default>
+
 terraform init
 
-# Create a plan
-export DEPLOY_STAGE="dev"
-terraform plan -var-file="${DEPLOY_STAGE}.tfvars"
+terraform plan
 
-# deploy
-terraform apply -var-file="${DEPLOY_STAGE}.tfvars" -out
+terraform apply
 ```
 
-## Reference
+## 2. Using a local module
+
+Creating static web bucket by using local module (followed this tutorial: https://learn.hashicorp.com/tutorials/terraform/module-create?in=terraform/modules).
+
+## 3. Managing terraform state locally
 
 We can configure where to keep the state file as below.
 
