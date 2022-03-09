@@ -1,0 +1,27 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+  pre_build:
+    commands:
+  build:
+    commands:
+      - echo Starting build on `date`
+      - pwd
+      - node --version
+      - echo Installing dependencies
+      - yarn install
+      - echo Checking lint
+      - yarn lint
+      - echo Checking type
+      - yarn type-check
+      - echo Running a unit test
+      - yarn test
+      - echo Gatsby build started on `date`
+      - yarn build
+artifacts:
+  files:
+    - "**/*"
+  base-directory: public
+  discard-paths: no

@@ -34,7 +34,7 @@ Managing Terraform state with S3 bucket (https://blog.gruntwork.io/how-to-manage
 
 2. There are two options for pointing the state to backend: do it in the backend config in the tf file or do it as a command line argument.
 
-```t
+```hcl
 terraform {
   backend "s3" {
     bucket         = "terraform-up-and-running-state"

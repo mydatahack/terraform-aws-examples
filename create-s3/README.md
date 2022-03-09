@@ -23,7 +23,7 @@ terraform apply -var-file="${DEPLOY_STAGE}.tfvars" -out
 
 We can configure where to keep the state file as below.
 
-```tf
+```hcl
 terraform {
   backend "local" {
     path = "relative/path/to/terraform.tfstate"
