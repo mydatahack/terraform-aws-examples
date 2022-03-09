@@ -1,6 +1,6 @@
 # terraform-aws-examples
 
-Terraform Examples for AWS. 
+Terraform Examples for AWS.
 
 ## Terraform Commands
 
@@ -17,6 +17,7 @@ terraform plan -var-file="dev.tfvars"
 # Apply with a tfvar file
 terraform apply -var-file="dev.tfvars"
 ```
+
 ## REFERENCES
 
 - Terraform use AWS SDK written in Go
@@ -31,7 +32,7 @@ Managing Terraform state with S3 bucket (https://blog.gruntwork.io/how-to-manage
 
 1. Use [Deploy-S3]('./Deploy-S3) to create bucket. This doesn't have backend configured, which means state will be stored locally. This is fine for creating a bucket for Terraform state management.
 
-2. There are two options for pointing the state to backend: do it in the backend config in the tf file or do it as a commandline argument.
+2. There are two options for pointing the state to backend: do it in the backend config in the tf file or do it as a command line argument.
 
 ```t
 terraform {
@@ -45,9 +46,13 @@ terraform {
 
 Alternatively, initialise terraform with backend config
 
-```baah
+```bash
 terraform init \
   -backend-config="bucket=${TF_STATE_BUCKET}" \
   -backend-config="key=${DEPLOY_STAGE}/${SERVICE_NAME}.tfstate" \
   -backend-config="region=${AWS_REGION}"
 ```
+
+## (2) Using a Local Module
+
+From this tutorial (https://learn.hashicorp.com/tutorials/terraform/module-create?in=terraform/modules).
